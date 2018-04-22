@@ -5,4 +5,5 @@ This project uses PHP to connect to MySQL server, and is simulating school cante
 
 New Feature:
 Show employee: showing the table of employee
+
 Add employee: insert employee record to table of employee
