@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 17, 2018 at 05:23 PM
+-- Generation Time: Apr 22, 2018 at 11:47 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `employee` (
-  `staff_id` varchar(255) NOT NULL,
+  `id` varchar(255) NOT NULL,
   `fname` varchar(255) NOT NULL,
   `lname` varchar(255) NOT NULL,
   `salary` int(255) NOT NULL,
@@ -40,10 +40,8 @@ CREATE TABLE `employee` (
 -- Dumping data for table `employee`
 --
 
-INSERT INTO `employee` (`staff_id`, `fname`, `lname`, `salary`, `tel`) VALUES
-('001', 'Fong Fong', 'Chow', 12000, 29488888),
-('002', 'Chi Cheng', 'Lam', 13000, 29486118),
-('003', 'Wai Kit', 'Ho', 11000, 29480838);
+INSERT INTO `employee` (`id`, `fname`, `lname`, `salary`, `tel`) VALUES
+('001', 'Fong Fong', 'Chow', 12000, 29488888);
 
 -- --------------------------------------------------------
 
@@ -71,7 +69,7 @@ INSERT INTO `user` (`name`, `password`) VALUES
 -- Indexes for table `employee`
 --
 ALTER TABLE `employee`
-  ADD PRIMARY KEY (`staff_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `user`

@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html>
+
+<head>
+
+	<title>Register</title>
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/register.css">
+	<!--<link rel="stylesheet" href="W:/courses/IIT3008/project/css/main.css">-->
+	<!--<link rel="stylesheet" href="W:/courses/IIT3008/project/css/register.css">-->
+
+</head>
+
+	<body>
+
+		<h1 class="center" style="margin-top:30px;text-align:center;width:30%">Registry</h1>
+		
+		<div class="center" style="font-size:20">
+			<form action="/functions/register.php" method="post">
+				<div>
+					<label class="label">User:</label><br>
+					<input name="username" type="text" />
+				</div>
+				<br>
+				<div>
+					<label class="label">Password:</label><br>
+					<input name="password" type="password" />
+				</div>
+				<br>
+				<div>
+					<label for="password" class="label">Confirm password:</label><br>
+					<input name="cf_password" type="password" />
+					<br>
+				</div>
+				<div style="margin-top:30px">
+					<input type="submit" name="submit" value="Register" />
+				</div>
+				<br>
+			</form>
+		</div>
+		
+	</body>
+
+</html>

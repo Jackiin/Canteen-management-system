@@ -7,9 +7,9 @@ $dbname = "project";
 $conn = mysqli_connect($servername, $username, $password, $dbname); 
 
 if ($conn) {
-    echo "<script>alert ('connect successfully');</script>";
+    //echo "<script>alert ('connect successfully');</script>";
 } else {
-	echo "<script>alert ('connect fail');</script>";
+	die();
 }
 //mysqli_close($conn);
 ?>
