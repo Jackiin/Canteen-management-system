@@ -4,6 +4,7 @@
 	<head>
 
 		<title>Current Employee</title>
+		<link rel="stylesheet" href="/css/table.css">
 	
 	</head>
 
@@ -21,7 +22,8 @@
 		$result = mysqli_query($conn, $sql);
 				
 		if ($result){
-			echo '<table style="margin:auto;width:80%" />
+			echo '
+			<table style="margin:auto;width:80%" />
 			<thead>
 			<tr>
 				<th align="center">ID</th>
@@ -33,11 +35,15 @@
 			</thead>
 			<tbody>
 			';
-					
+			
 			while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-				echo '<tr><td align="center">'.$row['id'].'<td align="center">'.$row['fname'].
-				'<td align="center">'.$row['lname'].'<td align="center">'.$row['salary'].
-				'<td align="center">'.$row['tel'].'</td></tr>';
+				if ($row['dismissed'] == 0){
+					echo '<tr><td align="center">'.$row['id'].'<td align="center">'.$row['fname'].
+					'<td align="center">'.$row['lname'].'<td align="center">'.$row['salary'].
+					'<td align="center">'.$row['tel'].'</td></tr>';
+				} else {
+				
+				}
 			}
 					
 			echo '</tbody></table>';

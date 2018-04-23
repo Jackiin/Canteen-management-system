@@ -3,7 +3,6 @@
 include($_SERVER['DOCUMENT_ROOT'].'/connect.php');
 
 $index_sql = "SELECT id FROM employee ORDER BY id DESC LIMIT 1";
-//$index_sql = "SELECT MAX(id) FROM employee";
 $index_result = mysqli_query($conn, $index_sql);
 $index_num = mysqli_num_rows($index_result);
 $index_id = "";
@@ -27,13 +26,14 @@ $lname = array_pop($names);
 $fname = implode(" ", $names);
 $salary = $_POST['salary'];
 $tel = trim($_POST['tel']);
+$dismiss = false;
 
 
 if (empty($names) || empty($salary) || empty($tel)){
 	echo "<script>alert('Empty field!');document.location.href='/main.html';</script>";
 } else {
 	if (!empty($lname)){
-		$sql = "INSERT INTO employee(`id`, `fname`, `lname`, `salary`, `tel`) VALUES ('$id', '$fname', '$lname', '$salary', '$tel')";
+		$sql = "INSERT INTO employee(`id`, `fname`, `lname`, `salary`, `tel`, `dismissed`) VALUES ('$id', '$fname', '$lname', '$salary', '$tel', '$dismiss')";
 		$result = mysqli_query($conn, $sql);
 		//echo "<script>alert ('$result');document.location.href='/main.html';</script>;";
 		if ($result == true){

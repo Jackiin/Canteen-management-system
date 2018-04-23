@@ -23,7 +23,7 @@ if(empty($sysusername) || empty($syspassword)){
 	echo "<script>alert('Empty field!');document.location.href='/index.html';</script>";
 }
 
-$sql = "SELECT name, password FROM user WHERE name = '$sysusername' AND password = '$syspassword'";
+$sql = "SELECT `name`, `password` FROM user WHERE `name` = '$sysusername' AND `password` = '$syspassword'";
 $result = mysqli_query($conn, $sql);
 $num = mysqli_num_rows($result);
 
