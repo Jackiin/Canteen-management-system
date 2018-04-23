@@ -9,6 +9,18 @@ This project uses PHP to connect to MySQL server, and is simulating school cante
   
 New Feature:
 
-Show employee: showing the table of employee
+main.html
+  
+  Manager User Interface
 
-Add employee: insert employee record to table of employee
+  Show employee: showing the table of employee
+
+  Add employee: insert employee record to table of employee
+
+  Remove employee: After removing, the employee would not be shown at the employee table after clicking "Show employee"
+
+  Update salary: change the salary of paticular employee
+
+order.html:
+  
+  Ordering Machine
