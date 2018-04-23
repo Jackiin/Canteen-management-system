@@ -1,0 +1,46 @@
+<!--This page is for manager-->
+<!DOCTYPE> 
+<html>
+
+<head>
+
+	<title>CCAN Management System</title>
+	<link rel="stylesheet" href="/css/main.css">
+
+</head>
+
+<body>
+
+	<h1 class="center" style="margin-top:40px;text-align:center;width:80%">CCAN Management System</h1>
+	
+	<div>
+		<div class="center" style="margin-top:30px;width:40%;font-size:24">
+			<a class="section" href="/functions/get_employee.php" target="_blank">Show Employee</a><br>
+			<a class="section" onclick="document.getElementById('pop_01').style.display='block'">Add Employee</a><br>
+			<a class="section" href="">Remove Employee</a><br>
+			<a class="section" href="">Update salary</a><br>
+		</div>
+		
+		<div id="pop_01" class="pop_up">
+			<form class="pop_up_content animate" action="/functions/add_employee.php" method="post">
+				<br>
+				<label class="label">Employee name</label><br>
+				<input class="input" type="text" name="name">
+				<br>
+				<label class="label">Telephone no.</label><br>
+				<input class="input" type="text" name="tel">
+				<br>
+				<label class="label">Salary</label><br>
+				<input class="input" type="number" name="salary">
+				<br>
+				<input class="apply" style="margin-right:22px" type="submit" name="submit" value="Add">
+				<a class="cancel" onclick="document.getElementById('pop_01').style.display='none'">Cancel</a>
+			</form>
+		</div>
+	</div>
+	
+	
+
+</body>
+
+</html>

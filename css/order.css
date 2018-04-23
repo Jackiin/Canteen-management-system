@@ -1,0 +1,32 @@
+.flex-container {
+	padding-top: 20px;
+	
+	display: flex;
+	flex-wrap: nowrap;
+	color: white;
+	background-color: #33cc33;
+}
+
+.order {
+	margin-right: 62px;
+}
+
+input[type=number] {
+	width: 200px;
+}
+
+#order {
+	width: 240px;
+	height: 50px;
+	
+	border: none;
+	font-size: 20;
+	color: #330000;
+	background-color: #ff6666;
+}
+
+#order:hover {
+	cursor: pointer;
+	color: white;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+}

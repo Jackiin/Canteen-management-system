@@ -1,0 +1,20 @@
+input {
+	padding-left: 10px;
+	padding-right: 10px;
+	
+	width: 50%;
+	height: 40px;
+}
+
+input[type=submit] {
+	height: 60px;
+	
+	font-size: 24;
+}
+
+.label {
+	display: inline-block;
+	width: 740px;
+	text-align: left;
+}
+
