@@ -1,5 +1,6 @@
 .flex-container {
 	padding-top: 20px;
+	padding-bottom: 20px;
 	
 	display: flex;
 	flex-wrap: nowrap;
@@ -15,7 +16,7 @@ input[type=number] {
 	width: 200px;
 }
 
-#order {
+#next {
 	width: 240px;
 	height: 50px;
 	
@@ -25,8 +26,25 @@ input[type=number] {
 	background-color: #ff6666;
 }
 
+#next:hover {
+	cursor: pointer;
+	color: white;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
+}
+
+#order {
+	width: 240px;
+	height: 50px;
+	
+	border: none;
+	font-size: 20;
+	color: #004d66;
+	background-color: #0099cc;
+}
+
 #order:hover {
 	cursor: pointer;
 	color: white;
 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2), 0px 6px 20px 0px rgba(0,0,0,0.19);
 }
+
