@@ -26,16 +26,16 @@ $lname = array_pop($names);
 $fname = implode(" ", $names);
 $salary = $_POST['salary'];
 $tel = trim($_POST['tel']);
+$position = trim($_POST['position']);
 $dismiss = false;
 
 
-if (empty($names) || empty($salary) || empty($tel)){
+if (empty($names) || empty($salary) || empty($tel) || empty($position)){
 	echo "<script>alert('Empty field!');document.location.href='/main.html';</script>";
 } else {
 	if (!empty($lname)){
-		$sql = "INSERT INTO employee(`id`, `fname`, `lname`, `salary`, `tel`, `dismissed`) VALUES ('$id', '$fname', '$lname', '$salary', '$tel', '$dismiss')";
+		$sql = "INSERT INTO employee(`id`, `fname`, `lname`, `salary`, `tel`, `position`, `dismissed`) VALUES ('$id', '$fname', '$lname', '$salary', '$tel', '$position', '$dismiss')";
 		$result = mysqli_query($conn, $sql);
-		//echo "<script>alert ('$result');document.location.href='/main.html';</script>;";
 		if ($result == true){
 			echo "<script>alert ('Employee was added!');document.location.href='/main.html';</script>";
 			mysqli_free_result($result);
