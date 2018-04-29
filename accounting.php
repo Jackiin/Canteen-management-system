@@ -59,6 +59,14 @@
 		$p4 = $row4['price'] * $q4;
 		$n4 = $row4['name'];
 		
+		session_start();
+		$ids = array($dish01, $dish02, $dish03, $dish04);
+		$quantities = array($q1, $q2, $q3, $q4);
+		$prices = array($p1, $p2, $p3, $p4);
+		$_SESSION['ids'] = $ids;
+		$_SESSION['quantities'] = $quantities;
+		$_SESSION['prices'] = $prices;
+		
 		echo '
 			<table style="margin:auto;width:80%">
 			<thead>
@@ -97,7 +105,7 @@
 	
 	<div style="margin-top:20px;margin-right:150px" align="right">
 		<button id="next" onclick="window.location.href='/order.php'">Return</button>
-		<button id="order" onclick="submitOrder()">Order</button>
+		<button id="order" onclick="window.location.href='/functions/end_order.php'">Order</button>
 	</div>
 
 </body>
