@@ -46,16 +46,17 @@
 		</div>
 		
 		<div id="pop_02" class="pop_up">
-			<form class="pop_up_content animate" action="/functions/add_food.php" method="post">
+			<form class="pop_up_content animate" action="/functions/update_food.php" method="post">
 				<br>
 				<label class="label">Food name</label><br>
-				<select>
+				<select name="id">
 				<?php
 					include($_SERVER['DOCUMENT_ROOT'].'/connect.php');
-					$result = mysqli_query($conn, "SELECT name FROM food");
+					$result = mysqli_query($conn, "SELECT id, name FROM food");
 					while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 							$name = $row['name'];
-							echo "<option value='$name'>" .$name."</option>";
+							$id = $row['id'];
+							echo "<option value='$id'>" .$name."</option>";
 					}
 				?>
 				</select>

@@ -38,34 +38,43 @@
 		$p3 = 0;
 		$p4 = 0;
 		
+		$unitp = array(0, 0, 0, 0);
+		
 		$sql1 = "SELECT `price`, `name` from food WHERE `id` = '$dish01'";
 		$result1 = mysqli_query($conn, $sql1);
 		$row1 = mysqli_fetch_array($result1, MYSQLI_ASSOC);
+		$unitp[0] = $row1['price'];
 		$p1 = $row1['price'] * $q1;
 		$n1 = $row1['name'];
 		$sql2 = "SELECT `price`, `name` from food WHERE `id` = '$dish02'";
 		$result2 = mysqli_query($conn, $sql2);
 		$row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC);
+		$unitp[1] = $row2['price'];
 		$p2 = $row2['price'] * $q2;
 		$n2 = $row2['name'];
 		$sql3 = "SELECT `price`, `name` from food WHERE `id` = '$dish03'";
 		$result3 = mysqli_query($conn, $sql3);
 		$row3 = mysqli_fetch_array($result3, MYSQLI_ASSOC);
+		$unitp[2] = $row3['price'];
 		$p3 = $row3['price'] * $q3;
 		$n3 = $row3['name'];
 		$sql4 = "SELECT `price`, `name` from food WHERE `id` = '$dish04'";
 		$result4 = mysqli_query($conn, $sql4);
 		$row4 = mysqli_fetch_array($result4, MYSQLI_ASSOC);
+		$unitp[3] = $row4['price'];
 		$p4 = $row4['price'] * $q4;
 		$n4 = $row4['name'];
 		
 		session_start();
 		$ids = array($dish01, $dish02, $dish03, $dish04);
+		$names = array($n1, $n2, $n3, $n4);
 		$quantities = array($q1, $q2, $q3, $q4);
 		$prices = array($p1, $p2, $p3, $p4);
 		$_SESSION['ids'] = $ids;
+		$_SESSION['names'] = $names;
+		$_SESSION['unitprices'] = $unitp;
+		$_SESSION['prices'] = $prices;		
 		$_SESSION['quantities'] = $quantities;
-		$_SESSION['prices'] = $prices;
 		
 		echo '
 			<table style="margin:auto;width:80%">
