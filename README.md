@@ -7,20 +7,13 @@ This project uses PHP to connect to MySQL server, and is simulating school cante
 
 2.Find a file named hosts in your C: drive and add one line "127.0.0.1  localhost" to the last line of the file. (How to find the file? Google it; but if you are using the lastest version of Win10 then the address would be "C:\Windows\WinSxS\amd64_microsoft-windows-w..ucture-other-minwin_31bf3856ad364e35_10.0.16299.15_none_582bc968d636655c\hosts") 
   
-New Feature:
+localhost/main.php (Page for manager)
 
-main.html
-  
-  Manager User Interface
+functions:
+manage employees
 
-  Show employee: showing the table of employee
+localhost/staff.php (Page for staff)
+manage orders
 
-  Add employee: insert employee record to table of employee
-
-  Remove employee: After removing, the employee would not be shown at the employee table after clicking "Show employee"
-
-  Update salary: change the salary of paticular employee
-
-order.html:
-  
-  Ordering Machine
+localhost/order.php (Page for customer)
+make orders
