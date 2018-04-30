@@ -21,3 +21,5 @@ localhost/order.php (Page for customer)
 
 function:
 make orders
+
+Also, thanks for FPDF and its authors http://www.fpdf.org/, I could be able to generate customer order in PDF format in my project.
