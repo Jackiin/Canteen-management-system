@@ -12,13 +12,6 @@ if ($index_num > 0) {
 
 $idno = intval($index_id[0]);
 
-/*
-if (empty($idno)) {
-	echo "<script>alert('No ID no');document.location.href='/main.html';</script>";
-} else {
-	echo "<script>alert($index_id[0]);</script>";
-}
-*/
 
 $id = '00'.($idno + 1); 
 $names = explode(" ", $_POST['name']);
@@ -31,19 +24,19 @@ $dismiss = false;
 
 
 if (empty($names) || empty($salary) || empty($tel) || empty($position)){
-	echo "<script>alert('Empty field!');document.location.href='/main.html';</script>";
+	echo "<script>alert('Empty field!');document.location.href='/main.php';</script>";
 } else {
 	if (!empty($lname)){
 		$sql = "INSERT INTO employee(`id`, `fname`, `lname`, `salary`, `tel`, `position`, `dismissed`) VALUES ('$id', '$fname', '$lname', '$salary', '$tel', '$position', '$dismiss')";
 		$result = mysqli_query($conn, $sql);
 		if ($result == true){
-			echo "<script>alert ('Employee was added!');document.location.href='/main.html';</script>";
+			echo "<script>alert ('Employee was added!');document.location.href='/main.php';</script>";
 			mysqli_free_result($result);
 		} else {
 		
 		}
 	} else {
-		echo "<script>alert('Name not completed!');document.location.href='/main.html';</script>";
+		echo "<script>alert('Name not completed!');document.location.href='/main.php';</script>";
 	}
 }
 

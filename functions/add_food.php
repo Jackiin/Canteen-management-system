@@ -24,13 +24,13 @@ $quantity = $_POST['quantity'];
 $price = $_POST['price'];
 
 if (empty($name) || empty($quantity) || empty($price)) {
-	echo "<script>alert('Empty field!');document.location.href='/staff.html';</script>";
+	echo "<script>alert('Empty field!');document.location.href='/staff.php';</script>";
 } else {
 		$sql = "INSERT INTO food(`id`, `zone_id`, `name`, `quantity`, `price`) VALUES ('$id', '$zone_id', '$name', '$quantity', '$price')";
 		$result = mysqli_query($conn, $sql);
 		
 		if ($result == true) {
-			echo "<script>alert ('Food was added!');document.location.href='/staff.html';</script>";
+			echo "<script>alert ('Food was added!');document.location.href='/staff.php';</script>";
 			mysqli_free_result($result);
 		}
 }
