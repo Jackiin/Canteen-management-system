@@ -150,6 +150,8 @@ select {
 	margin-left: 10px;
 	margin-top: 10px;
 	margin-bottom: 8px;
+	
+	width: 230px;
 }
 
 select:hover {
@@ -159,4 +161,5 @@ select:hover {
 #register {
 	color: #d279d2;
 }
+
 
