@@ -9,11 +9,15 @@ This project uses PHP to connect to MySQL server, and is simulating school cante
   
 localhost/main.php (Page for manager)
 
-functions:
+function:
 manage employees
 
 localhost/staff.php (Page for staff)
+
+function:
 manage orders
 
 localhost/order.php (Page for customer)
+
+function:
 make orders
