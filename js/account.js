@@ -19,7 +19,7 @@ function account() {
 			
 			
 			$.get("/accounting.php", order, function(data) {
-				alert(order);
+				//alert(order);
 				window.location.href = "/accounting.php?" + order;
 			});
 			
