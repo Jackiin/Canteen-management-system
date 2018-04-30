@@ -1,7 +1,7 @@
 # Canteen-management-system
 A project about school canteen management system.
 
-This project uses PHP to connect to MySQL server, and is simulating school canteen management system. Now, only the login page is done. If you do not want to configure too much, just download xampp latest version from: https://www.apachefriends.org/download.html and use 127.0.0.1 to visit index.html. However, if you want to use localhost/ to visit your project, the following configurations are needed:
+This project uses PHP to connect to MySQL server, and is simulating school canteen management system. If you do not want to configure too much, just download xampp latest version from: https://www.apachefriends.org/download.html and use 127.0.0.1 to visit index.html. However, if you want to use localhost/ to visit your project, the following configurations are needed:
 
 1.open xampp root directory -> apache -> conf -> httpd.conf, search for "DocumentRoot" and change the address to your project root directory; also, you would find <Directory> tag below, change the address to your project root.
 
