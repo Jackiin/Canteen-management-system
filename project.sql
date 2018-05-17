@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 30, 2018 at 10:26 AM
+-- Generation Time: May 17, 2018 at 10:09 AM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -43,7 +43,11 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`id`, `fname`, `lname`, `salary`, `tel`, `dismissed`, `position`) VALUES
-('001', 'Yiu Chi', 'Lai', 15000, '29488888', 0, 'Chef');
+('001', 'Yiu Chi', 'Lai', 15000, '29488888', 0, 'Chef'),
+('002', 'Tak Wah', 'Koo', 10000, '29486666', 0, 'Cleaner'),
+('009', 'Ka', 'Ho', 9000, '29485656', 0, 'cleaner'),
+('010', 'Chong Yin', 'Chan', 10000, '29483333', 0, 'Cleaner'),
+('011', 'Chun Wah', 'Chan', 5000, '29484444', 0, 'Cleaner');
 
 -- --------------------------------------------------------
 
@@ -64,11 +68,11 @@ CREATE TABLE `food` (
 --
 
 INSERT INTO `food` (`id`, `zone_id`, `name`, `quantity`, `price`) VALUES
-('A01', 'A', 'BBQ Pork', -9, 25),
-('B01', 'B', 'Kung Pao Chicken', -23, 22),
-('B02', 'B', 'Poached Sliced Beef in Hot Chili Oil', 6, 40),
-('C01', 'C', 'Chicken with curry source', 1, 22),
-('C02', 'C', 'Instant Noodles with hams and beef', 3, 18);
+('A01', 'A', 'BBQ Pork', 19, 22),
+('B01', 'B', 'Kung Pao Chicken', 18, 22),
+('B02', 'B', 'Poached Sliced Beef in Hot Chili Oil', 18, 40),
+('C01', 'C', 'Chicken with curry source', 18, 22),
+('C02', 'C', 'Instant Noodles with hams and beef', 20, 18);
 
 -- --------------------------------------------------------
 
@@ -106,13 +110,6 @@ CREATE TABLE `orders` (
   `finished` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`id`, `employee_id`, `date`, `finished`) VALUES
-('201804300002', '001', '2018-04-30', 0);
-
 -- --------------------------------------------------------
 
 --
@@ -126,34 +123,6 @@ CREATE TABLE `orders_record` (
   `order_date` datetime NOT NULL,
   `finished` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `orders_record`
---
-
-INSERT INTO `orders_record` (`food_id`, `order_id`, `quantity`, `order_date`, `finished`) VALUES
-('A01', '201804300002', 1, '2018-04-30 16:06:06', 0),
-('B01', '201804300002', 2, '2018-04-30 16:06:06', 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `turnover`
---
-
-CREATE TABLE `turnover` (
-  `zone_id` varchar(1) NOT NULL,
-  `turnover` int(11) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `turnover`
---
-
-INSERT INTO `turnover` (`zone_id`, `turnover`) VALUES
-('A', 0),
-('B', 0),
-('C', 0);
 
 -- --------------------------------------------------------
 
@@ -181,17 +150,18 @@ INSERT INTO `user` (`name`, `password`) VALUES
 
 CREATE TABLE `zone` (
   `id` varchar(1) NOT NULL,
-  `name` text CHARACTER SET utf8 NOT NULL
+  `name` text CHARACTER SET utf8 NOT NULL,
+  `turnover` int(5) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `zone`
 --
 
-INSERT INTO `zone` (`id`, `name`) VALUES
-('A', 'BBQ - 燒味'),
-('B', 'Chinese Food - 中餐'),
-('C', 'Western Food - 西餐');
+INSERT INTO `zone` (`id`, `name`, `turnover`) VALUES
+('A', 'BBQ - 燒味', 0),
+('B', 'Chinese Food - 中餐', 0),
+('C', 'Western Food - 西餐', 0);
 
 --
 -- Indexes for dumped tables
@@ -233,12 +203,6 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `orders_record`
   ADD PRIMARY KEY (`food_id`,`order_id`);
-
---
--- Indexes for table `turnover`
---
-ALTER TABLE `turnover`
-  ADD PRIMARY KEY (`zone_id`);
 
 --
 -- Indexes for table `user`
