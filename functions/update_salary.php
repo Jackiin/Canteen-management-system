@@ -3,7 +3,7 @@
 include($_SERVER['DOCUMENT_ROOT'].'/connect.php');
 
 $names = explode(" ", $_POST['name']);
-$lname = array_pop($names);
+$lname = array_shift($names);
 $fname = implode(" ", $names);
 $salary= $_POST['salary'];
 

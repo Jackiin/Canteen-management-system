@@ -12,10 +12,14 @@ if ($index_num > 0) {
 
 $idno = intval($index_id[0]);
 
+if ($idno >= 9) {
+	$id = '0'.($idno + 1);
+} else {
+	$id = '00'.($idno + 1);
+}
 
-$id = '00'.($idno + 1); 
 $names = explode(" ", $_POST['name']);
-$lname = array_pop($names);
+$lname = array_shift($names); //remove the first element of the array and return the value of that element
 $fname = implode(" ", $names);
 $salary = $_POST['salary'];
 $tel = trim($_POST['tel']);
