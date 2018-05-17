@@ -19,19 +19,31 @@
 	
 	date_default_timezone_set('Asia/Hong_Kong');
 	$date = date('Ymd');
+	$dt = date('Y-m-d');
 	
-	$index_sql = "SELECT id FROM order ORDER BY id DESC LIMIT 1";
+	$index_sql = "SELECT id FROM orders WHERE date = '$dt' ORDER BY id DESC LIMIT 1";
 	$index_result = mysqli_query($conn, $index_sql);
 	$index_num = mysqli_num_rows($index_result);
+	//some problems here
 	if ($index_num > 0) {
 		$index_id = mysqli_fetch_row($index_result);
+		//echo "<script>alert ($date + ', ' + $index_id[0])</script>";
+		$idno_temp = str_replace($date, '', $index_id[0]);
+		//echo "<script>alert ($idno_temp)</script>";
+		$idno = intval($idno_temp);
+	} else {
+		$idno = 0;
 	}	
 	
-	$idno = intval(explode($date, $index_id[0]));
-	$order_id = $date.'000'.($idno + 1);
-	$employee_id = '001';
+	if ($idno >= 9) {
+		$order_id = $date.'00'.($idno + 1);
+	} else {
+		$order_id = $date.'000'.($idno + 1);
+	}
 	
-	$dt = date('Y-m-d');
+	$employee_id = '001'; //this employee id shall be changeable, but no time to fix
+	
+	//$dt = date('Y-m-d');
 	$sql = "INSERT INTO orders(`id`, `employee_id`, `date`) VALUES ('$order_id', '$employee_id', '$dt')";
 	$result = mysqli_query($conn, $sql);
 	
